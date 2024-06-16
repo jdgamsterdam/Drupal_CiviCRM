@@ -1,0 +1,5 @@
+set mysqlfqdn=mysql.fqdn.com
+set mysqluser=drupaluser
+set mysqlpassword=mypassword
+set drupaldatabasename=drupal_civicrm_database
+set drupaladminpassword=mydrupaladminpassword

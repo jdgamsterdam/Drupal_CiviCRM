@@ -1,0 +1,28 @@
+services:
+    drupal:
+        image: drupalwithmysqlnd:latest
+        hostname: drupal
+        domainname: fqdn.com
+        container_name: drupal
+        networks:
+            my-data-environment:
+                ipv4_address: 172.20.0.99
+        ports:
+            - '80:80'
+        volumes:
+           # Need to be very careful on a Windows docker host as permissions work differently  Could map to a WSL folder.  
+            - /e/Projects-Drupal/current-development:/opt/drupal/web/modules/contrib/current-development
+        restart: unless-stopped
+        environment:
+            - LANG=C.UTF-8         
+        stdin_open: true # docker run -i
+        tty: true        # docker run -t
+        extra_hosts: 
+            - "mysql.fqdn.com:172.20.0.3"
+
+networks: 
+  my-data-environment: 
+    external: true
+    
+volumes:
+    drupal:

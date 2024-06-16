@@ -1,0 +1,3 @@
+
+# Set the temp file directory so GENC works
+$settings['file_temp_path'] = '/opt/drupal/web/sites/default/files/tmp';
