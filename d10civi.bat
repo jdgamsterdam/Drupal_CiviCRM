@@ -5,11 +5,11 @@ call env.bat
 :: The following installs and Enables Civi
 docker exec drupal cv core:install --cms-base-url="http://localhost" --db="mysql://%mysqluser%:%mysqlpassword%@%mysqlfqdn%:3306/%drupaldatabasename%"
 
-::This is needed to create the menus - Because civicrm is partially created in the dockerile this directory does not get created at the right time 
+::This is needed to create the menus - Because CiviCRM is partially created in the Dockerile this directory does not get created at the right time 
 docker exec drupal mkdir /opt/drupal/web/sites/default/files/civicrm/persist/contribute/dyn
 docker exec drupal drush cr
 
-::Need to get permissions and Can't mix Windows and Linux in container  .  To Get menu to work Nake sure your server has write permissions to /web/sites/default/files/civicrm/persist/contribute
+::Need to get permissions and Can't mix Windows and Linux in container.  To get menus to work make sure your server has write permissions to /web/sites/default/files/civicrm/persist/contribute
 
 docker exec drupal chmod -R 777 /opt/drupal/web/sites/default/files
 

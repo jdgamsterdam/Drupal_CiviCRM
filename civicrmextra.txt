@@ -1,0 +1,5 @@
+
+
+if (!defined('CIVICRM_TEMPLATE_COMPILE_CHECK')) {
+  define('CIVICRM_TEMPLATE_COMPILE_CHECK', FALSE);
+}

@@ -1,10 +1,10 @@
 # Start with the Drupal Docker File.  This is Pretty good and sets up most of the things correctly
 FROM drupal:latest
 
-# This containes a list of the packages need for civicrm as well as a number of basic libraries that are useful for developement.  
+# This contains a list of the packages need for CiviCRM as well as a number of basic libraries that are useful for development.  
 RUN apt-get update && apt-get install -y lsb-release wget libonig-dev libxml2-dev zip unzip wget gnupg unzip nano git wget jq iputils-ping
 
-#The following .deb is used to setup the connection to Mysql.  It is theorhetically possible to use Maraidb, but for some some security and administration reasons, mysql is slightly better.
+#The following .deb is used to setup the connection to Mysql.  It is theoretically possible to use Maraidb, but for some some security and administration reasons, mysql is slightly better.
 
 # There is no "latest" for the MYSQL requirements from Oracle so important that the name of the file matches with the install below
 
@@ -29,7 +29,7 @@ RUN docker-php-ext-install mysqli pdo pdo_mysql
 #Add Latest Drush 
 RUN ["/bin/bash", "-c", "composer require --dev drush/drush"]
 
-#Civicrm Extras - Extra Packages and PHP packages needed for CIvicrm
+#CiviCRM Extras - Extra Packages and PHP packages needed for CiviCRM
 
 RUN apt-get update && apt-get install -y libsodium-dev libzip-dev && docker-php-ext-install opcache sodium zip intl
 
