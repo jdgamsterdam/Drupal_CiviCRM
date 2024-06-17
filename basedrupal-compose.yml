@@ -2,7 +2,7 @@ services:
     drupal:
         image: drupal_civi_mysql:latest
         hostname: drupal
-        domainname: goldbergcf.com
+        domainname: fqdn.com
         container_name: drupal
         networks:
             my-data-environment:
@@ -18,7 +18,7 @@ services:
         stdin_open: true # docker run -i
         tty: true        # docker run -t
         extra_hosts: 
-            - "mysql.goldbergcf.com:172.20.0.3"
+            - "mysql.fqdn.com:172.20.0.3"
 
 networks: 
   my-data-environment: 
