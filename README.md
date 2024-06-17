@@ -11,7 +11,9 @@ NOTE: This is a Script Setting for a WINDOWS HOST.  However, the .bat files shou
 This contains all the variables (e.g. your passwords) wanted for the development
 
 1. Drupal_Civi_Dockerfile
-   The Dockerfile used to create the base repository using the latest Drupal docker repository as a base.  Contains all the base install for CiviCRM. Once you are certain about what Modules you would want for your standard development platform (customdevmodules.bat), you could move all these into the dockerfile. 
+   The Dockerfile used to create the base repository using the latest Drupal docker repository as a base.  Contains all the base install for CiviCRM. 
+   
+   Once you are certain about what Modules you would want for your standard development platform (customdevmodules.bat), you could move all these into the dockerfile.  In reality you could probably move parts of the all Batch files below into the dockerfile, but because of the external database and other dependencies things may or may not work.  
 
 2. drupal.ini 
    This contains custom settings for your development php.ini. Installed in the Dockerfile (above)
@@ -24,6 +26,8 @@ This contains all the variables (e.g. your passwords) wanted for the development
 
 5. customdevmodules.bat
    These are all the specific "extra" modules that you like to use in your development or production environment for testing
+
+5.5 NOT Included currentdevelopment.bat - This refers to specific settings for your current projects you are working on . 
 
 6. d10civi.bat
    This contains all the small necessary changes that are need to get CiviCRM to install and work. 
